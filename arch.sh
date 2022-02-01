@@ -27,7 +27,7 @@ usermod -aG wheel,audio,video,storage,optical $user
 
 EDITOR=nano visudo
 
-pacman -S grub efibootmgr dosfstools mtools os-prober
+pacman -S grub efibootmgr dosfstools mtools os-prober -y
 
 mkdir /boot/EFI
 
@@ -37,5 +37,8 @@ grub-install --target=x86_64-efi --bootloader-id=GRUB --recheck
 
 grub-mkconfig -o /boot/grub/grub.cfg
 nano /etc/pacman.conf
-pacman -Sy plasma-meta steam discord fish neofetch htop telegram-desktop obs-studio code vlc
+pacman -Sy plasma-meta steam discord fish neofetch htop telegram-desktop obs-studio code vlc -y
 
+exit
+umount -a
+reboot
