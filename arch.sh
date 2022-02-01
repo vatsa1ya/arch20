@@ -2,7 +2,7 @@
 
 ## SettingTime ##
 echo Setting Time
-ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 hwclock --systohc
 
 ## Installing Essentials ##
