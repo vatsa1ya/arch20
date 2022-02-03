@@ -19,14 +19,13 @@ nano /etc/hostname
 nano /etc/hosts
 
 echo 'Adding User And Setting Root Password'
-read -p 'Set Username: ' user
-useradd -m $user
+useradd -m nick
 echo 'Set User Password'
-passwd $user
+passwd nick
 echo 'Set Root Password'
 passwd
 
-usermod -aG wheel,audio,video,storage,optical $user
+usermod -aG wheel,audio,video,storage,optical nick
 
 EDITOR=nano visudo
 echo 'Installing GRUB'
@@ -50,6 +49,7 @@ echo '### Enabling Services ###'
 sudo systemctl enable NetworkManager
 sudo systemctl enable sddm
 sudo systemctl enable ufw
+sudo systemctl start ufw
 sudo systemctl enable bluetooth
 
 ### Setting Up Firewall ###
