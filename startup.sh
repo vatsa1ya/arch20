@@ -8,3 +8,6 @@ mkdir ~/.config/fish/functions
 
 cp \installation\fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 cp \installation\config.fish ~/.config/fish/config.fish
+
+exit
+
