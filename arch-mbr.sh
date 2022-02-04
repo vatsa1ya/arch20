@@ -19,14 +19,14 @@ nano /etc/hostname
 nano /etc/hosts
 
 echo 'Adding User And Setting Root Password'
-read 'Username: ' user
-useradd -m $user
+
+useradd -m nick
 echo 'Set User Password'
-passwd $user
+passwd nick
 echo 'Set Root Password'
 passwd
 
-usermod -aG wheel,audio,video,storage,optical $user
+usermod -aG wheel,audio,video,storage,optical nick
 
 EDITOR=nano visudo
 echo 'Installing GRUB'
