@@ -38,7 +38,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 nano /etc/pacman.conf
 
-pacman -Sy ufw packagekit-qt5 pulseaudio pulseaudio-bluetooth bluez bluez-utils fish neofetch htop -y
+pacman -Sy ufw packagekit-qt5 pulseaudio pulseaudio-bluetooth bluez bluez-utils fish neofetch htop virtualbox-guest-utils -y
 
 ### Enabling Services ###
 
@@ -47,6 +47,6 @@ sudo systemctl enable NetworkManager
 sudo systemctl enable sddm
 sudo systemctl enable ufw
 sudo systemctl enable bluetooth
-
+sudo systemctl enable vboxservice
 
 
