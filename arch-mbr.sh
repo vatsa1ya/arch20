@@ -19,14 +19,14 @@ nano /etc/hostname
 nano /etc/hosts
 
 echo 'Adding User And Setting Root Password'
-
-useradd -m nick
-echo 'Set User Password'
-passwd nick
 echo 'Set Root Password'
 passwd
+read -p 'Username: ' user
+useradd -m $user
+echo 'Set User Password'
+passwd $user
 
-usermod -aG wheel,audio,video,storage,optical nick
+usermod -aG wheel,audio,video,storage,optical $user
 
 EDITOR=nano visudo
 echo 'Installing GRUB'
@@ -38,7 +38,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 nano /etc/pacman.conf
 
-pacman -Sy ufw packagekit-qt5 pulseaudio pulseaudio-bluetooth bluez bluez-utils discord fish neofetch htop telegram-desktop obs-studio code vlc -y
+pacman -Sy ufw packagekit-qt5 pulseaudio pulseaudio-bluetooth bluez bluez-utils fish neofetch htop -y
 
 ### Enabling Services ###
 
